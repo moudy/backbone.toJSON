@@ -39,8 +39,7 @@ user.toJSON({ methods:'fullName'] })
 { firstName:'Andreas', lastName:'Gursky', fullName: 'Andreas Gursky' } // result
 
 // if you need to pass arguments to the method you can use an object
-// the keys become the method name, and the value should be an array of
-arguments
+// the keys become the method name, and the value should be an array of arguments
 user.toJSON({ methods:{ fullName:[true] })
 { firstName:'Andreas', lastName:'Gursky', fullName: 'Andreas G' } // result
 ```
