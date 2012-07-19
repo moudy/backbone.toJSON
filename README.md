@@ -32,17 +32,17 @@ a view's template needs a value that's not an attribute on the model.
 ```javascript
 // when passed an array each item will be called on the model
 user.toJSON({ methods:['fullName', 'initials'] })
-// returns { firstName:'Andreas', lastName:'Gursky', fullName: 'Andreas Gursky', initials: 'A G' }
+{ firstName:'Andreas', lastName:'Gursky', fullName: 'Andreas Gursky', initials: 'A G' } // result
 
 // if only one method is needed you can also pass a string
 user.toJSON({ methods:'fullName'] })
-// returns { firstName:'Andreas', lastName:'Gursky', fullName: 'Andreas Gursky' }
+{ firstName:'Andreas', lastName:'Gursky', fullName: 'Andreas Gursky' } // result
 
 // if you need to pass arguments to the method you can use an object
 // the keys become the method name, and the value should be an array of
 arguments
 user.toJSON({ methods:{ fullName:[true] })
-// returns { firstName:'Andreas', lastName:'Gursky', fullName: 'Andreas G' }
+{ firstName:'Andreas', lastName:'Gursky', fullName: 'Andreas G' } // result
 ```
 
 ### options.namespace
