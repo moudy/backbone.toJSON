@@ -88,6 +88,20 @@
         };
         return expect(userData).toEqual(expected);
       });
+      it("should allow for overriding the namespace", function() {
+        var expected, userData;
+        user.namespace = "user";
+        userData = user.toJSON({
+          namespace: 'photographer'
+        });
+        expected = {
+          photographer: {
+            firstName: 'Andreas',
+            lastName: 'Gursky'
+          }
+        };
+        return expect(userData).toEqual(expected);
+      });
       return it("should be possible to omit the namespace", function() {
         var expected, userData;
         user.namespace = 'user';

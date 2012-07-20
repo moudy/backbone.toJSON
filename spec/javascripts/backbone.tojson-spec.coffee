@@ -58,6 +58,13 @@ describe 'backbone.toJSON', ->
 
       expect(userData).toEqual(expected)
 
+    it "should allow for overriding the namespace", ->
+      user.namespace = "user"
+      userData = user.toJSON(namespace:'photographer')
+      expected = photographer: { firstName:'Andreas', lastName:'Gursky' }
+
+      expect(userData).toEqual(expected)
+
     it "should be possible to omit the namespace", ->
       user.namespace = 'user'
       userData = user.toJSON(namespace:false)

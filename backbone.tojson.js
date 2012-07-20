@@ -37,7 +37,7 @@
 
       if (namespace && !(options.namespace === false)) {
         var result = {}
-        result[ _.result(this, 'namespace') ] = json;
+        result[namespace] = json;
         json = result;
       }
 
